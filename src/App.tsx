@@ -8,7 +8,6 @@ const App: FunctionComponent = () => {
         <h1>Bonjour, {name} !</h1>
     )
 }
-
 export default App;
 
 /*
