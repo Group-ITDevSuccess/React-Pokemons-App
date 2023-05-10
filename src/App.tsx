@@ -3,7 +3,7 @@ import React, {FunctionComponent, useState} from 'react';
 // React.FC: React Fonction Conposant
 const App: FunctionComponent = () => {
     // const name: String = 'React';
-    const [name, setName] = useState('React JS');
+    const [name, setName] = useState<String>('React JS');
 
     return (
         <h1>Bonjour, {name} !</h1>
