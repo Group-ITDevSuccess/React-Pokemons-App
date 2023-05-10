@@ -14,7 +14,16 @@ const App: FunctionComponent = () => {
     return (
         <div>
             <h1>Pokédex</h1>
-            <p>Il y a, {pokemons.length} !</p>
+            <p>Il y a, {pokemons.length} pokemon{ (pokemons.length > 1) ? 's ' : ' '}!</p>
+            <div>
+                <ul>
+                    {
+                        pokemons.map((pokemon) => (
+                            <li key={pokemon.id}>{pokemon.name}</li>
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
     )
 }
