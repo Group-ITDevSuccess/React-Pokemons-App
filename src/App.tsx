@@ -12,7 +12,10 @@ const App: FunctionComponent = () => {
     },[]);
 
     return (
-        <h1>Il y a, {pokemons.length} !</h1>
+        <div>
+            <h1>Pokédex</h1>
+            <p>Il y a, {pokemons.length} !</p>
+        </div>
     )
 }
 export default App;
