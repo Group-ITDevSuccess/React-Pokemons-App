@@ -1,8 +1,9 @@
-import React, {FunctionComponent} from 'react';
+import React, {FunctionComponent, useState} from 'react';
 
 // React.FC: React Fonction Conposant
 const App: FunctionComponent = () => {
-    const name: String = 'React';
+    // const name: String = 'React';
+    const [name, setName] = useState('React JS');
 
     return (
         <h1>Bonjour, {name} !</h1>
