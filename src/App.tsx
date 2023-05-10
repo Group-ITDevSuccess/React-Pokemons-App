@@ -5,7 +5,7 @@ const App: FunctionComponent = () => {
     const name: String = 'React';
 
     return (
-        <h1>Hello, {name} !</h1>
+        <h1>Bonjour, {name} !</h1>
     )
 }
 
