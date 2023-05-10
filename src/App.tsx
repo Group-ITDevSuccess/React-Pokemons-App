@@ -1,32 +1,41 @@
-import React, {FunctionComponent, useState, useEffect} from 'react';
-import Pokemon from './models/pokemon';
-import { POKEMONS } from './models/mock-pokemon';
+import React, { FunctionComponent, useState, useEffect } from "react";
+import Pokemon from "./models/pokemon";
+import { POKEMONS } from "./models/mock-pokemon";
 
 // React.FC: React Fonction Conposant
 const App: FunctionComponent = () => {
-    // const name: String = 'React';
-    const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+  // const name: String = 'React';
+  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
-    useEffect(()=>{
-        setPokemons(POKEMONS);
-    },[]);
+  useEffect(() => {
+    setPokemons(POKEMONS);
+  }, []);
 
-    return (
-        <div>
-            <h1>Pokédex</h1>
-            <p>Il y a, {pokemons.length} pokemon{ (pokemons.length > 1) ? 's ' : ' '}!</p>
-            <div>
-                <ul>
-                    {
-                        pokemons.map((pokemon) => (
-                            <li key={pokemon.id}>{pokemon.name}</li>
-                        ))
-                    }
-                </ul>
+  return (
+    <div className="container">
+      <h1 className="header center-align">Pokédex</h1>
+      <div className="row">
+        {pokemons.map(({ id, name, picture, created }) => (
+          <div key={id} className="col s12 m6">
+            <div className="card horizontal">
+              <div className="card-image">
+                <img src={picture} alt={name} />
+              </div>
+              <div className="card-stacked">
+                <div className="card-content">
+                  <h5 className="header">{name}</h5>
+                  <p>
+                    <small>{created.toString()}</small>
+                  </p>
+                </div>
+              </div>
             </div>
-        </div>
-    )
-}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 export default App;
 
 /*
